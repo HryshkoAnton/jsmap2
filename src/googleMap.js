@@ -59,6 +59,7 @@ function handleWeatherByCoords(coordsOfClick){
 function setMarker(coords, response) {
     if(marker){
       marker.setMap(null);
+      marker = undefined;
     }
     marker = new google.maps.Marker({
     position: coords,
@@ -86,20 +87,12 @@ function setInfoWindow(marker, response){
     infowindow.addListener('domready', () => {
       $('.showWeather').on('click', () => {
         let cityName = $('.showWeather').text();
-        marker.setMap(null)
-        service.findCityAndSetMarker(cityName).done((response) => {
-            let coords = {
-              lat: response.coord.lat,
-              lng: response.coord.lon
-            }
-            map.setCenter(coords);
-            map.setZoom(8);
-            setMarker(coords, response);
+       
+        service.findCityAndSetMarker(cityName).done((response) => {      
 
             utils.handle5Days(cityName);
-
             utils.setDataToCardInfo(response);
-            setInfoWindow(marker, response)
+            
           }).fail((error) => {
             console.log(error);
           });
@@ -113,6 +106,12 @@ function setInfoWindow(marker, response){
     infowindow.addListener('closeclick', () => {
       marker.setMap(null);
     });
+    google.maps.event.addListener(map, "click", ()=>{
+      
+      infowindow.close();
+      
+      marker.setMap(null);
+    })
    
   }
 export default {

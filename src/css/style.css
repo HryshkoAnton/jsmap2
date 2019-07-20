@@ -57,7 +57,7 @@ body {
 }
 
 #card-tmpl{
-    display: none;
+    display: none !important;
 }
 
 .cardInfo{
