@@ -1,0 +1,186 @@
+@import '../hello/style.css';
+
+body {
+    /* background: url(/img/1.jpg) no-repeat center top / cover; */
+    background-color: rgb(19, 18, 18);
+    position: relative;
+}
+
+
+#map {
+    outline: 4px inset rgba(92,26,164,0.62);
+    outline-offset: 0px;
+    height: 100vh;
+    position: absolute;
+    z-index: -10;
+    margin-left: -15px;
+
+    width: 100%;
+    overflow: hidden;
+    transition: max-width 1.5s;
+}
+
+
+.width-50{
+    max-width: 55%;
+}
+
+.width-100{
+    width: 100%;
+}
+
+.card{
+    outline: 4px inset rgba(186, 182, 201, 0.62);
+    outline-offset: 0px;
+    color: rgb(255, 255, 255);
+}
+
+.checkWeather {
+    background-color: #18DBCD;
+}
+
+
+.main-button{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tableTime{
+    font-size: 8px;
+}
+
+.slider{
+    font-size: 12px;
+    height: 200px;
+    opacity: 0.9;
+    
+}
+
+#card-tmpl{
+    display: none;
+}
+
+.cardInfo{
+    position: absolute;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.infoContainer{
+    width: 45%;
+    height: 100vh;
+    background: linear-gradient(21deg, #f7f7f4, hsl(180, 90%, 35%));
+    /* background-color: rgb(214, 202, 202); */
+    position: absolute;
+    right: 0;
+    border-left: 3px solid #6919A4;
+    display: none;
+    overflow-y: scroll;
+    min-width: 500px;
+    color: rgb(255, 255, 255);
+    /* #e7ecf0, #072f85 */
+}
+
+.block{
+    display: block;
+}
+
+.none{
+    display: none;
+}
+
+.temperature{
+    font-size: 23px;
+    color: rgb(39, 36, 185);
+    font-weight: bold;
+    margin: 10px;
+    margin-bottom: 35px;
+}
+
+
+
+    
+input::-webkit-input-placeholder       {text-indent: 0px;   transition: text-indent 0.3s ease;}
+input::-moz-placeholder                {text-indent: 0px;   transition: text-indent 0.3s ease;}
+input:-moz-placeholder                 {text-indent: 0px;   transition: text-indent 0.3s ease;}
+input:-ms-input-placeholder            {text-indent: 0px;   transition: text-indent 0.3s ease;}
+input:focus::-webkit-input-placeholder {text-indent: 500px; transition: text-indent 0.3s ease;}
+input:focus::-moz-placeholder          {text-indent: 500px; transition: text-indent 0.3s ease;}
+input:focus:-moz-placeholder           {text-indent: 500px; transition: text-indent 0.3s ease;}
+input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-indent 0.3s ease;}
+
+.input {
+    position: relative;
+    font-size: 1.5em;
+    background: linear-gradient(21deg, #10abff, #1beabd);
+    padding: 3px;
+    display: inline-block;
+    border-radius: 5px;
+    display: flex;
+    max-width: 270px;
+  }
+  .input *:not(span) {
+    position: relative;
+    display: inherit;
+    border-radius: inherit;
+    margin: 0;
+    border: none;
+    outline: none;
+    padding: 0 0.325em;
+    z-index: 1;
+  }
+  .input *:not(span):focus + span {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .input span {
+    transform: scale(0.993, 0.94);
+    transition: transform 0.5s, opacity 0.25s;
+    opacity: 0;
+    position: absolute;
+    z-index: 0;
+    margin: 4px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd, -3px 3px 30px #10abff;
+  }
+
+
+  input {
+    font-family: inherit;
+    line-height: inherit;
+    color: #2e3750;
+    width: 8em;
+    max-width: 270px;
+  }
+  ::placeholder {
+    color: #cbd0d5;
+  }
+
+  .checkWeather{
+    background: linear-gradient(21deg, #10abff, #1beabd);
+  }
+
+.logoTitle {
+
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+.scroll{
+
+    overflow-x: scroll;
+
+}
+
+
+.closeInfo {
+    padding: 10px;
+}
