@@ -75,7 +75,7 @@ body {
     /* background-color: rgb(214, 202, 202); */
     position: absolute;
     right: 0;
-    border-left: 3px solid #6919A4;
+    border-left: 3px solid rgb(67, 25, 164);
     display: none;
     overflow-y: scroll;
     min-width: 500px;

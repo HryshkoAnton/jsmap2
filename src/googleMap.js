@@ -44,7 +44,6 @@ function handleWeatherByCoords(coordsOfClick){
     $('body').append(script);
 
     $('#map').on('setCenterAndZoom', (e, data) => {
-        var a = data.coords;
         map.setCenter(data.coords);
         map.setZoom(8);
     });
@@ -71,6 +70,10 @@ function setMarker(coords, response) {
 }
 
 function setInfoWindow(marker, response){
+  let coords = {
+    lat: response.coord.lat,
+    lng: response.coord.lon
+  }
     let contentString = `
     <h3>
       <a href="#" class="showWeather">
@@ -87,7 +90,7 @@ function setInfoWindow(marker, response){
     infowindow.addListener('domready', () => {
       $('.showWeather').on('click', () => {
         let cityName = $('.showWeather').text();
-       
+        
         service.findCityAndSetMarker(cityName).done((response) => {      
 
             utils.handle5Days(cityName);
@@ -100,7 +103,7 @@ function setInfoWindow(marker, response){
         $('.infoContainer').removeClass('none');
         $('.infoContainer').addClass('block');
         animateCSS('.infoContainer', 'fadeInRight');
-        
+        $('#map').trigger('setCenterAndZoom', { coords });
       });
     });
     infowindow.addListener('closeclick', () => {
