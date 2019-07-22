@@ -4,6 +4,7 @@ body {
     /* background: url(/img/1.jpg) no-repeat center top / cover; */
     background-color: rgb(19, 18, 18);
     position: relative;
+    font-family: 'Vast Shadow', cursive;
 }
 
 
@@ -29,10 +30,12 @@ body {
     width: 100%;
 }
 
-.card{
-    outline: 4px inset rgba(186, 182, 201, 0.62);
-    outline-offset: 0px;
-    color: rgb(255, 255, 255);
+.bg-tables{
+    /* outline: 4px inset rgba(215, 211, 231, 0.62);
+    outline-offset: 0px; */
+    color: rgb(3, 3, 36);
+    background-color: rgb(122, 172, 206);
+    font-family: 'Baloo Bhaina', cursive;
 }
 
 .checkWeather {
@@ -56,9 +59,6 @@ body {
     
 }
 
-#card-tmpl{
-    display: none !important;
-}
 
 .cardInfo{
     position: absolute;
@@ -120,6 +120,7 @@ input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-ind
     border-radius: 5px;
     display: flex;
     max-width: 270px;
+    
   }
   .input *:not(span) {
     position: relative;
@@ -130,6 +131,7 @@ input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-ind
     outline: none;
     padding: 0 0.325em;
     z-index: 1;
+    
   }
   .input *:not(span):focus + span {
     opacity: 1;
@@ -149,6 +151,7 @@ input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-ind
     border-radius: inherit;
     pointer-events: none;
     box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd, -3px 3px 30px #10abff;
+    
   }
 
 
@@ -158,9 +161,11 @@ input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-ind
     color: #2e3750;
     width: 8em;
     max-width: 270px;
+    
   }
   ::placeholder {
     color: #cbd0d5;
+    font-size: 16px;
   }
 
   .checkWeather{
@@ -183,4 +188,13 @@ input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-ind
 
 .closeInfo {
     padding: 10px;
+}
+
+.card{
+    padding: 12px 0px;
+    text-align: center;
+}
+
+.weatherIcon{
+    margin-left: 5px;
 }

@@ -5,7 +5,7 @@ function destroySlick(){
   }
   
   function initSlickSlider(){
-    $('.slider').slick({
+    $('.weatherSlider').slick({
       refresh: true,
       infinite: false,
       slidesToShow: 5,

@@ -12,7 +12,9 @@ function initEvents() {
 
     let city = $('.findCity').val();
     utils.handle5Days(city);
+
     service.findCityAndSetMarker(city).done((response) => {
+      //console.log(response.status)
       let coords = {
         lat: response.coord.lat,
         lng: response.coord.lon
@@ -25,7 +27,7 @@ function initEvents() {
       // googleMap.setInfoWindow(marker, response)
       $('#map').trigger('setInfoWindow', { response });
     }).fail((error) => {
-      console.log(error);
+      $('#myModal').modal()
     });
     $('.infoContainer').removeClass('none');
     $('.infoContainer').addClass('block');
@@ -36,10 +38,19 @@ function initEvents() {
     $('.infoContainer').addClass('none');
   });
 
-  $('#myTab a').on('click', function (e) {
+  $('#myTab a').on('click', (e) => {
     e.preventDefault()
     $(this).tab('show');
   })
 }
+
+$('.closeModal').on('click', () => {
+  $('.infoContainer').removeClass('block');
+  $('.infoContainer').addClass('none');
+})
+
+$('#myModal').on('hidden.bs.modal', () => {
+  $('.findCity').trigger('focus');
+})
 
 export default initEvents;

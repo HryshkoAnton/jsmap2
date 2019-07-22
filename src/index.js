@@ -8,3 +8,4 @@ import initEvents from './events';
 
 googleMap.initMap();
 initEvents();
+

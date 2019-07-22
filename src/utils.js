@@ -36,14 +36,31 @@ return formattedTime
 }
 
 function addDataToCard(response){
-_.each(response.list, data => {
-    let clone = $('#card-tmpl').clone()
-    .prop('id', data.dt)
-    .appendTo('.card-section');
-    clone.find('.weatherDate').html(`<span>${data.dt_txt.slice(0,10).split('-').reverse().join('-')}<br>${data.dt_txt.slice(11,16)}</span>`);
-    clone.find('.weatherIcon').prop('src', 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
-    clone.find('.weatherTemp').html(`<span>${Math.floor(data.main.temp - 273.15)} &deg;C</span>`);
-});
+  let $slider = $('.slider');
+  let $newSlider = $('<div class="weatherSlider">')
+  response.list.forEach(data => {
+    console.log(data)
+
+    let $card = $(`<div id="${data.dt}" class="card ThreeHoursCard bg-tables"></div>`);
+    let $cardHeader = $('<div class="card-header"><span class="weatherDate"></span></div>');
+    let $cardList = $('<ul class="list-group list-group-flush"></ul>');
+    let $cardListItem1 = $('<li class="list-group-item bg-tables"><img class="weatherIcon"></li>');
+    let $cardListItem2 = $('<li class="list-group-item bg-tables weatherTemp"></li>')
+
+    $cardHeader.find('.weatherDate')
+      .html(`<span>${data.dt_txt.slice(0,10).split('-').reverse().join('-')}<br>${data.dt_txt.slice(11,16)}</span>`);
+    $cardListItem1.find('.weatherIcon')
+      .prop('src', 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
+    $cardListItem2.html(`<span>${Math.floor(data.main.temp - 273.15)} &deg;C</span>`);
+    
+
+    $card.append($cardHeader);
+    $cardList.append($cardListItem1);
+    $cardList.append($cardListItem2);
+    $card.append($cardList);
+    $newSlider.append($card)
+  });
+  $slider.html($newSlider);
 }
 
 function handleHours(hours){
@@ -73,7 +90,7 @@ return days;
 
 function addDataToEveryDayWeatherTabs(responseArray){
 responseArray.forEach((data, i) => {
-    let $table = $('<table class="table table-striped table-dark"></table>');
+    let $table = $('<table class="table table-striped bg-tables"></table>');
     // let $head;
     $(`#dayTab-${i}`).text(data.day);
     let $head = $('<thead></thead>');
@@ -120,6 +137,7 @@ function handle5Days(city){
       addDataToCard(response);
       slickHelper.destroySlick();
       slickHelper.initSlickSlider();
+      
       
     }).fail((error) => {
       console.log(error);
