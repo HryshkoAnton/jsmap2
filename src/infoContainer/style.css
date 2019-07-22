@@ -1,8 +1,7 @@
 .infoContainer{
     width: 45%;
     height: 100vh;
-    background: url('../../img/weather-assets/Background-assets/Layer0.jpg') no-repeat center top / cover;
-    /* background: linear-gradient(21deg, #f7f7f4, hsl(180, 90%, 35%)); */
+    background: url('../../img/Layer0.jpg') no-repeat center top / cover;
     position: absolute;
     right: 0;
     border-left: 3px solid rgb(67, 25, 164);
