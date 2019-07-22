@@ -14,17 +14,13 @@ function initEvents() {
     utils.handle5Days(city);
 
     service.findCityAndSetMarker(city).done((response) => {
-      //console.log(response.status)
       let coords = {
         lat: response.coord.lat,
         lng: response.coord.lon
       }
       $('#map').trigger('setCenterAndZoom', { coords });
-      // googleMap.map.setCenter(coords);
-      // googleMap.map.setZoom(8);
       googleMap.setMarker(coords, response);
       utils.setDataToCardInfo(response);
-      // googleMap.setInfoWindow(marker, response)
       $('#map').trigger('setInfoWindow', { response });
     }).fail((error) => {
       $('#myModal').modal()

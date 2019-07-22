@@ -1,7 +1,6 @@
-@import '../hello/style.css';
+@import '../infoContainer/style.css';
 
 body {
-    /* background: url(/img/1.jpg) no-repeat center top / cover; */
     background-color: rgb(19, 18, 18);
     position: relative;
     font-family: 'Vast Shadow', cursive;
@@ -30,13 +29,7 @@ body {
     width: 100%;
 }
 
-.bg-tables{
-    /* outline: 4px inset rgba(215, 211, 231, 0.62);
-    outline-offset: 0px; */
-    color: rgb(3, 3, 36);
-    background-color: rgb(122, 172, 206);
-    font-family: 'Baloo Bhaina', cursive;
-}
+
 
 .checkWeather {
     background-color: #18DBCD;
@@ -48,16 +41,7 @@ body {
     font-weight: bold;
 }
 
-.tableTime{
-    font-size: 8px;
-}
 
-.slider{
-    font-size: 12px;
-    height: 200px;
-    opacity: 0.9;
-    
-}
 
 
 .cardInfo{
@@ -68,20 +52,6 @@ body {
     position: absolute;
 }
 
-.infoContainer{
-    width: 45%;
-    height: 100vh;
-    background: linear-gradient(21deg, #f7f7f4, hsl(180, 90%, 35%));
-    /* background-color: rgb(214, 202, 202); */
-    position: absolute;
-    right: 0;
-    border-left: 3px solid rgb(67, 25, 164);
-    display: none;
-    overflow-y: scroll;
-    min-width: 500px;
-    color: rgb(255, 255, 255);
-    /* #e7ecf0, #072f85 */
-}
 
 .block{
     display: block;
@@ -91,17 +61,8 @@ body {
     display: none;
 }
 
-.temperature{
-    font-size: 23px;
-    color: rgb(39, 36, 185);
-    font-weight: bold;
-    margin: 10px;
-    margin-bottom: 35px;
-}
 
 
-
-    
 input::-webkit-input-placeholder       {text-indent: 0px;   transition: text-indent 0.3s ease;}
 input::-moz-placeholder                {text-indent: 0px;   transition: text-indent 0.3s ease;}
 input:-moz-placeholder                 {text-indent: 0px;   transition: text-indent 0.3s ease;}
@@ -151,7 +112,6 @@ input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-ind
     border-radius: inherit;
     pointer-events: none;
     box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd, -3px 3px 30px #10abff;
-    
   }
 
 
@@ -178,23 +138,3 @@ input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-ind
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-
-.scroll{
-
-    overflow-x: scroll;
-
-}
-
-
-.closeInfo {
-    padding: 10px;
-}
-
-.card{
-    padding: 12px 0px;
-    text-align: center;
-}
-
-.weatherIcon{
-    margin-left: 5px;
-}

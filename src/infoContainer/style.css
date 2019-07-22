@@ -1,0 +1,69 @@
+.infoContainer{
+    width: 45%;
+    height: 100vh;
+    background: url('../../img/weather-assets/Background-assets/Layer0.jpg') no-repeat center top / cover;
+    /* background: linear-gradient(21deg, #f7f7f4, hsl(180, 90%, 35%)); */
+    position: absolute;
+    right: 0;
+    border-left: 3px solid rgb(67, 25, 164);
+    display: none;
+    overflow-y: scroll;
+    min-width: 500px;
+    color: rgb(255, 255, 255);
+    font-family: 'Comfortaa', cursive;
+    color: black;
+    font-weight: 600;
+}
+
+.temperature{
+    font-size: 23px;
+    color: maroon;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 35px;
+}
+
+
+.scroll{
+    overflow-x: scroll;
+}
+
+
+.closeInfo {
+    padding: 10px;
+}
+
+.card{
+    padding: 12px 0px;
+    text-align: center;
+}
+
+.weatherIcon{
+    margin-left: 5px;
+}
+
+.tableTime{
+    font-size: 8px;
+}
+
+.slider{
+    font-size: 12px;
+    height: 200px;
+    opacity: 0.9;
+    
+}
+
+.bg-tables{
+    background-color:rgba(255, 255, 255, 0.7);
+    font-family: 'Comfortaa', cursive;
+    color: black;
+    font-weight: 600;
+}
+
+.cityName {
+    font-family: 'Russo One', sans-serif;
+}
+
+.colorBlack{
+    color: black;
+}

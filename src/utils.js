@@ -27,22 +27,20 @@ function setDataToCardInfo(response) {
   }
   
 function getDateFromUnixTime(unixTime) {
-let date = new Date(unixTime * 1000);
-let hours = date.getHours();
-let minutes = `0${date.getMinutes()}`;
-let seconds = `0${date.getSeconds()}`;
-let formattedTime = `${hours}:${minutes.substr(-2)}:${seconds.substr(-2)}`;
-return formattedTime
+  let date = new Date(unixTime * 1000);
+  let hours = date.getHours();
+  let minutes = `0${date.getMinutes()}`;
+  let seconds = `0${date.getSeconds()}`;
+  let formattedTime = `${hours}:${minutes.substr(-2)}:${seconds.substr(-2)}`;
+  return formattedTime
 }
 
 function addDataToCard(response){
   let $slider = $('.slider');
   let $newSlider = $('<div class="weatherSlider">')
   response.list.forEach(data => {
-    console.log(data)
-
     let $card = $(`<div id="${data.dt}" class="card ThreeHoursCard bg-tables"></div>`);
-    let $cardHeader = $('<div class="card-header"><span class="weatherDate"></span></div>');
+    let $cardHeader = $('<div class="card-header bg-tables"><span class="weatherDate"></span></div>');
     let $cardList = $('<ul class="list-group list-group-flush"></ul>');
     let $cardListItem1 = $('<li class="list-group-item bg-tables"><img class="weatherIcon"></li>');
     let $cardListItem2 = $('<li class="list-group-item bg-tables weatherTemp"></li>')
@@ -53,7 +51,6 @@ function addDataToCard(response){
       .prop('src', 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
     $cardListItem2.html(`<span>${Math.floor(data.main.temp - 273.15)} &deg;C</span>`);
     
-
     $card.append($cardHeader);
     $cardList.append($cardListItem1);
     $cardList.append($cardListItem2);

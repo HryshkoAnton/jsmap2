@@ -5,7 +5,8 @@ import 'slick-carousel';
 import googleMap from './googleMap';
 import initEvents from './events';
 
-
+import appendInfoContainer from './infoContainer/index'
+appendInfoContainer()
 googleMap.initMap();
 initEvents();
 

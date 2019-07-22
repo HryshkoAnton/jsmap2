@@ -22,6 +22,10 @@ let conf = {
           //exclude: '/node_modules/'
         },
         {
+          test: /\.(png|jpg)$/,
+          loader: 'url-loader'
+        },
+        {
           test: /\.(html)$/,
           use: {
             loader: 'html-loader',
